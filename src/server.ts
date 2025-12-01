@@ -171,7 +171,12 @@ app.post("/todos", async (req: Request, res: Response) => {
     }
 });
 
-
+app.use((req, res) => {
+    res.status(404).json({
+        success: false,
+        message: "Rount not founde"
+    })
+})
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
