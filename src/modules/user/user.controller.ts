@@ -6,7 +6,7 @@ const createUser = async (req: Request, res: Response) => {
     const { name, email } = (req.body);
 
     try {
-        const resule = await userServices.createUser(name, email);
+        const resule = await userServices.createUser(req.body);
 
         return res.status(201).json({
             success: true,
